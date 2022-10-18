@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "Manzana",
+    "precio": "12",
+    "imagen": "https://img.freepik.com/free-vector/hand-drawn-apple-fruit-illustration_53876-2980.jpg?w=740&t=st=1665929244~exp=1665929844~hmac=33ae683c39b50bc03a6f7cc08cdac7b4fa34d8a79951a0ac98809e7d8512515f",
+    "id": 1
+  },
+  {
+    "nombre": "Naranja",
+    "precio": "25",
+    "imagen": "https://img.freepik.com/free-vector/hand-drawn-colorful-orange-illustration_53876-2977.jpg?w=740&t=st=1665929344~exp=1665929944~hmac=e109113638b620748a7c4eccb1ff5021995ccd06c0d30bf313e451dd2dce9324",
+    "id": 2
+  },
+  {
+    "nombre": "Pera",
+    "precio": "58",
+    "imagen": "https://img.freepik.com/free-vector/hand-drawn-pear-fruit-illustration_53876-2983.jpg?w=740&t=st=1665929311~exp=1665929911~hmac=40f1187f1125637d9707a37a04ea2ef42a131ce73f8fd9dfee3e93eb3a98e2ec",
+    "id": 3
+  },
+  {
+    "nombre": "Zanahoria",
+    "precio": "120",
+    "imagen": "https://img.freepik.com/premium-vector/carrot-vegetable_68708-551.jpg",
+    "id": 4
+  },
+  {
+    "nombre": "Choclo",
+    "precio": "254",
+    "imagen": "https://img.freepik.com/premium-vector/corn-cobs-vector-cartoon-flat-vegetable-icon-isolated-white-background_97231-43.jpg?w=740",
+    "id": 5
+  },
+  {
+    "nombre": "Anana",
+    "precio": "25",
+    "imagen": "https://img.freepik.com/free-photo/pineapple-fruit_1203-7746.jpg?w=360&t=st=1665929610~exp=1665930210~hmac=ae9b2f78dc404824679011d5ceeaec3ebbd92ab8a2b411cf4f37279548f70860",
+    "id": 6
+  }
+]
