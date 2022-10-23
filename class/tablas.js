@@ -12,6 +12,16 @@ const getProducts = async () => {
       return [];
   }
 };
+const getMessages = async () => {
+  const contenedor = new Contenedor("./mensajes.txt");
+  const mensajes = await contenedor.getAll();
+  if (mensajes) {
+      return mensajes;
+  } else {
+      return [];
+  }
+};
+
 
 class Tablas {
   // Tabla productos
@@ -59,6 +69,13 @@ class Tablas {
           console.log(err);
         })
         .finally(() => {
+          knex.destroy();
+        });
+        knex("mensajes").insert(getMessages()).then(()=>{
+          console.log(getMessages());
+        }).catch((err) =>{
+          console.log(err);
+        }).finally(() =>{
           knex.destroy();
         });
     });
