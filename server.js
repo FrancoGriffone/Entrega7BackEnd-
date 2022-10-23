@@ -1,7 +1,14 @@
 const express = require("express");
-const Contenedor = require("./contenedor");
+const Contenedor = require("./class/contenedor");
+const startTable = require('./class/tablas');
 const { Server: ServerHttp } = require("http");
 const { Server: ServerIo } = require("socket.io");
+
+//Knex
+const { options } = require("./options/options");
+const knex = require("knex")(options.mysql);
+const knexSql = require("knex")(options.sqlite3);
+
 
 const app = express();
 app.use(express.json());
@@ -49,6 +56,7 @@ const generarFechaHora = () => {
 }
 
 io.on("connection", async (socket) => {
+
     socket.emit("mensaje-productos", await getProducts().then((data) => data));
 
     socket.emit("mensaje-chat", await getMessages().then((data) => data));
@@ -82,6 +90,14 @@ app.get("/", async (req, res) => {
         res.json({ error });
     }
 });
+
+async function start(){
+    const inicio =  new startTable();
+
+    let prod = await inicio.prod();
+    let mess = await inicio.mess();
+}
+start();
 
 
 const PORT = process.env.PORT || 8080;
