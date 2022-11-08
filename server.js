@@ -1,14 +1,8 @@
 const express = require("express");
 const Contenedor = require("./class/contenedor");
-const startTable = require('./class/tablas');
 const { Server: ServerHttp } = require("http");
 const { Server: ServerIo } = require("socket.io");
-
-//Knex
-const { options } = require("./options/options");
-const knex = require("knex")(options.mysql);
-const knexSql = require("knex")(options.sqlite3);
-
+import {faker} from "@faker-js/faker";
 
 const app = express();
 app.use(express.json());
@@ -70,7 +64,7 @@ io.on("connection", async (socket) => {
             imagen,
         });
         io.sockets.emit("mensaje-productos", await getProducts().then((data)=>data))
-    })
+    }) 
     socket.on("chat-nuevo", async (chat) => {
         const contenedor = new Contenedor("./mensajes.txt");
         const { mail, mensaje } = chat;
@@ -83,22 +77,13 @@ io.on("connection", async (socket) => {
     })
 });
 
-app.get("/", async (req, res) => {
+app.get("/api/producto-test", async (req, res) => {
     try {
         res.render("pages/ingresar", {});
     } catch (error){
         res.json({ error });
     }
 });
-
-async function start(){
-    const inicio =  new startTable();
-
-    let prod = await inicio.prod();
-    let mess = await inicio.mess();
-}
-start();
-
 
 const PORT = process.env.PORT || 8080;
 const server = HttpServer.listen(PORT, () => {
